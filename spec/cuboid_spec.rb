@@ -463,7 +463,7 @@ describe Cuboid do
         @rectangle.move_to!(-4.5,0,0) #should be against the left wall now
         @rectangle.rotate!("z") #should force some x_nudge as the rotation would move it out of the box
       end
-      it "should cause the cuboid's origin to move so it's fully contained again" do
+      it "should move so it's fully contained again" do
         expect(@rectangle.x).to eql(-3.5)
       end
     end
