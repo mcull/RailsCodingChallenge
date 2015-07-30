@@ -26,7 +26,7 @@ class Cuboid
   end
 
   def highest_plane
-    @y + @height/2.0
+    @y + @height/2
   end
 
   def lowest_plane
@@ -98,7 +98,7 @@ class Cuboid
   def put_inside!(bigger_cuboid)
     raise ArgumentError.new("Cuboids can only be put inside other cuboids") unless (bigger_cuboid.is_a?(Cuboid))
     raise ArgumentError.new("Cuboids can only be put inside larger boxes") unless (bigger_cuboid.height > self.height && bigger_cuboid.width > self.width && bigger_cuboid.depth > self.depth)
-    raise ArgumentError.new("Cuboids can only be put inside containers they're wholly contained by") unless ((bigger_cuboid.x - self.x).abs + self.width/2 <= bigger_cuboid.width/2 && (bigger_cuboid.y - self.y).abs + self.height/2 <= bigger_cuboid.height/2 && (bigger_cuboid.z - self.z).abs + self.depth/2 <= bigger_cuboid.depth/2)
+    raise ArgumentError.new("Cuboids can only be put inside containers they're wholly contained by") unless ((bigger_cuboid.x - self.x).abs + self.width/2 <= bigger_cuboid.width/2 && (bigger_cuboid.y - self.y).abs + self.height/2 <= bigger_cuboid.height/2 &&  (bigger_cuboid.z - self.z).abs + self.depth/2 <= bigger_cuboid.depth/2)
 
     @container = bigger_cuboid
   end
